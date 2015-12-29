@@ -36,7 +36,7 @@ gulp.task('js', function() {
         .bundle()
         //.on('error', console.error.bind(console))
         .pipe(source('bundle.js'))
-        // turn on when no longer testing.pipe(uglify)
+        //.pipe(uglify)
         .pipe(gulp.dest(config.paths.dist + '/js'))
 });
 

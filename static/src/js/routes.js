@@ -9,9 +9,9 @@ var Redirect = Router.Redirect;
 
 var IndexPage = require('./components/app');
 var HomePage = require('./components/homePage');
-var AuthorsPage = require('./components/authors/authorPage');
-var ManageAuthorPage = require('./components/authors/manageAuthorPage');
 var AboutPage = require('./components/about/aboutPage');
+var PollsPage = require('./components/polls/pollsPage');
+var PollViewPage = require('./components/polls/pollViewPage');
 var NotFoundPage = require('./components/NotFoundPage');
 
 var routes = (
@@ -21,6 +21,8 @@ var routes = (
 		<Route name="addAuthor" path="author" handler={ManageAuthorPage} />
 		<Route name="manageAuthor" path="author/:id" handler={ManageAuthorPage} />
 		<Route name="about" handler={AboutPage} />
+		<Route name="polls" handler={PollsPage} />
+		<Route name="pollView" path="polls/:slug" handler={PollViewPage} />
 		<NotFoundRoute handler={NotFoundPage} />
 		<Redirect from="about-us" to="about" />
 		<Redirect from="awthurs" to="authors" />
@@ -28,4 +30,5 @@ var routes = (
 	</Route>
 );
 
+//<NotFoundRoute handler={NotFoundPage} />
 module.exports = routes;

@@ -13,9 +13,9 @@ var Header = React.createClass({
                         <img src="static/dist/images/hhhlogo.png" />
                     </Link>
                     <ul className="nav navbar-nav">
-                        <li><a href="https://www.reddit.com/r/hiphopheads">REDDIT</a></li>
-                        <li><Link to="authors">POLLS</Link></li>
+                        <li><Link to="polls">POLLS</Link></li>
                         <li><Link to="about">ABOUT</Link></li>
+                        <li><a href="https://www.reddit.com/r/hiphopheads">REDDIT</a></li>
                    </ul>
                </div>
            </nav>

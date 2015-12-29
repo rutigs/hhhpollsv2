@@ -4,36 +4,36 @@ var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
 // var PollsActions = require('../../actions/pollsActions');
-var toastr = require('toastr');
+// var toastr = require('toastr');
 
 var OpenPollsList = React.createClass({
-	// write a createPollRow function and pass the this.props.polls
+	// write a createPollRow function and pass the this.props.poll
+	// propTypes: {
+	// 	polls: React.PropTypes.array.isRequired;
+	// },
 	render: function() {
+		var createPollRow = function(poll) {
+			return (
+				<tr key={poll.id}>
+					<td><Link to="pollView" params={{slug: poll.slug}}>{poll.name}</Link></td>
+					<td>{poll.info}</td>
+					<td>{poll.embed_url}</td>
+				</tr>
+			);
+		};
 		return (
 			<div>
 				<table className="table">
 					<thead>
-						<th>Name</th>
+						<th>Open Polls</th>
 						<th>Info</th>
 						<th>URL</th>
 					</thead>
-					<tbody> // {this.props.authors.map(createPollRow, this)}
-						<tr key=1>
-							<td>Hardest Grinder of 2015</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr key=2>
-							<td>Best Album of 2015</td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr key=2>
-							<td>Best track of 2015</td>
-							<td></td>
-							<td></td>
-						</tr>
+					<tbody>
+						{this.props.polls.map(createPollRow, this)}
 					</tbody>
+				</table>
+			</div>
 		);
 	}
 });

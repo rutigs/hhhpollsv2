@@ -1,15 +1,17 @@
 "use strict";
 
 var Dispatcher = require('../dispatcher/appDispatcher');
-var ActionTypes = require('../constants/ActionTypes');
-var AuthorApi = require('../api/authorApi');
+
+var PollActionTypes = require('../constants/pollActionTypes');
+var AppApi = require('../api/appApi');
 
 var InitializeActions = {
 	initApp: function() {
 		Dispatcher.dispatch({
-			actionType: ActionTypes.INITIALIZE,
+			actionType: PollActionTypes.INITIALIZE,
 			initialData: {
-				authors: AuthorApi.getAllAuthors()
+				openPolls: AppApi.getOpenPolls(),
+				closedPolls: AppApi.getClosedPolls()
 			}
 		});
 	}
