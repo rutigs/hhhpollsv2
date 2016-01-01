@@ -39,12 +39,17 @@ var PollStore = assign({}, EventEmitter.prototype, {
 Dispatcher.register(function(action) {
 	switch(action.actionType) {
 		case ActionTypes.INITIALIZE:
+			break;
+		case ActionTypes.RECEIVE_OPEN_POLLS:
 			_openPolls = action.initialData.openPolls;
+			break;
+		case ActionTypes.RECEIVE_CLOSED_POLLS:
 			_closedPolls = action.initialData.closedPolls;
-			PollStore.emitChange();
 			break;
 		default:
+			return true;
 	}
+	PollStore.emitChange();
 });
 
 module.exports = PollStore;

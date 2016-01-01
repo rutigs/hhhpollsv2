@@ -17,9 +17,6 @@ var NotFoundPage = require('./components/NotFoundPage');
 var routes = (
 	<Route name="app" path="/" handler={IndexPage}>
 		<DefaultRoute handler={HomePage} />
-		<Route name="authors" handler={AuthorsPage} />
-		<Route name="addAuthor" path="author" handler={ManageAuthorPage} />
-		<Route name="manageAuthor" path="author/:id" handler={ManageAuthorPage} />
 		<Route name="about" handler={AboutPage} />
 		<Route name="polls" handler={PollsPage} />
 		<Route name="pollView" path="polls/:slug" handler={PollViewPage} />

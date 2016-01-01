@@ -22,7 +22,7 @@ var ClosedPollsList = React.createClass({
 			<div>
 				<table className="table">
 					<thead>
-						<th>Open Polls</th>
+						<th>Closed Polls</th>
 						<th>Info</th>
 						<th>URL</th>
 					</thead>

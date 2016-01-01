@@ -8,9 +8,6 @@ var Link = Router.Link;
 
 var OpenPollsList = React.createClass({
 	// write a createPollRow function and pass the this.props.poll
-	// propTypes: {
-	// 	polls: React.PropTypes.array.isRequired;
-	// },
 	render: function() {
 		var createPollRow = function(poll) {
 			return (
@@ -21,6 +18,10 @@ var OpenPollsList = React.createClass({
 				</tr>
 			);
 		};
+		var rows;
+		if(this.props.polls.length > 0) {
+			rows = this.props.polls.map(createPollRow, this);
+		}
 		return (
 			<div>
 				<table className="table">
